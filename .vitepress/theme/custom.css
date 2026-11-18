@@ -89,12 +89,6 @@
 
 .kmpkt-nav-kt {
   font-weight: 800;
-  background: linear-gradient(90deg, #059669, #10B981, #84CC16);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.dark .kmpkt-nav-kt {
   background: linear-gradient(90deg, var(--kmpkt-c1), var(--kmpkt-c2), var(--kmpkt-c3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
