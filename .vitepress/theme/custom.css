@@ -117,6 +117,13 @@
   vertical-align: middle;
 }
 
+.VPHero .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .kmpkt-hero-stage {
   --rx: 0deg;
   --ry: 0deg;
@@ -125,6 +132,7 @@
   position: relative;
   width: 280px;
   height: 280px;
+  margin: 0 auto;
   display: grid;
   place-items: center;
   perspective: 900px;
