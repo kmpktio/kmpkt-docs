@@ -1,0 +1,8 @@
+node_modules/
+.vitepress/cache/
+.vitepress/dist/
+guide/
+modules/
+examples/
+.tmp-kmpkt/
+.DS_Store
