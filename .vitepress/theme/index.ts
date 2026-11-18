@@ -218,8 +218,11 @@ function applyPalette(idx: number, persist = false) {
   }
 }
 
+let paletteRestored = false;
+
 function restorePalette() {
-  if (!inBrowser) return;
+  if (!inBrowser || paletteRestored) return;
+  paletteRestored = true;
   try {
     const raw = localStorage.getItem(PALETTE_STORAGE_KEY);
     if (raw === null) return;
@@ -306,6 +309,7 @@ function renderPostmarkStamp(partRefs: (SVGGElement | null)[]) {
 const NavHexIcon = defineComponent({
   name: 'NavHexIcon',
   setup() {
+    onMounted(restorePalette);
     return () => {
       const palette = PALETTES[paletteIndex.value];
       return h(
@@ -747,7 +751,6 @@ export default {
   extends: DefaultTheme,
   enhanceApp({ app }: { app: { component: (name: string, comp: unknown) => void } }) {
     app.component('MermaidDiagram', MermaidDiagram);
-    restorePalette();
   },
   Layout() {
     return h(DefaultTheme.Layout, null, {
